@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu de Exemplos JavaScript</title>
+    <title>Aplicações em JavaScript (Básico)</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
-    <script src="script.js"></script>
-    <div class="container">
-        <h1>Aplicações em JavaScript</h1>
-        <button onclick="irSomaNum('soma-numeros.html')">Soma de Números</button>
-        <button onclick="irJogoSecreto('jogo-secreto-interativo.html')">Jogo do Número Secreto Mais Interativo</button>
-        <button onclick="irLista('exemplo-listas.html')">Lista de Tarefas</button>
+    <div class="main-container">
+        <div class="menu-container">
+            <h1>Aplicações em JavaScript</h1>
+            <button onclick="irJogoSoma()">Soma de Números</button>
+            <button onclick="irMedia()">Média</button>
+            <button onclick="irJogoSecreto()">Jogo da Adivinhação</button>
+        </div>
+        
     </div>
+
+    <script src="script.js" defer></script> 
 </body>
 </html>
