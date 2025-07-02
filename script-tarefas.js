@@ -1,53 +1,72 @@
-document.addEventListener('DOMContentLoaded', () => {
-    function adicionarBotoesFechar() {
-        let listaNodos = document.getElementsByTagName("li");
-        for (let i = 0; i < listaNodos.length; i++) {
-            if (!listaNodos[i].querySelector('.botao-fechar')) {
-                let span = document.createElement("span");
-                let texto = document.createTextNode("\u00D7");
-                span.className = "botao-fechar";
-                span.appendChild(texto);
-                listaNodos[i].appendChild(span);
+let frutas = [];
 
-                span.onclick = function() {
-                    let div = this.parentElement;
-                    div.style.display = "none";
-                };
-            }
-        }
-    }
+function atualizarLista() {
+  document.getElementById('listaFrutas').textContent = JSON.stringify(frutas);
+}
 
-    adicionarBotoesFechar();
+function adicionarFruta() {
+  const input = document.getElementById('frutaInput');
+  const valor = input.value.trim();
 
-    let lista = document.querySelector('ul');
-    lista.addEventListener('click', function(evento) {
-        if (evento.target.tagName === 'LI') {
-            evento.target.classList.toggle('marcado');
-        }
-    }, false);
+  if (valor) {
+    frutas.push(valor);
+    input.value = "";
+    atualizarLista();
+  }
+}
 
-    window.adicionarElemento = function() {
-        let li = document.createElement("li");
-        let valorInput = document.getElementById("tarefa").value;
-        let t = document.createTextNode(valorInput);
-        li.appendChild(t);
+function metodo(acao) {
+  if (acao === 'push') {
+    const fruta = prompt("Digite uma fruta para adicionar no final:");
+    if (fruta) frutas.push(fruta);
+  } else if (acao === 'pop') {
+    frutas.pop();
+  } else if (acao === 'shift') {
+    frutas.shift();
+  } else if (acao === 'unshift') {
+    const fruta = prompt("Digite uma fruta para adicionar no início:");
+    if (fruta) frutas.unshift(fruta);
+  }
+  atualizarLista();
+}
 
-        if (valorInput === '') {
-            alert("Você precisa descrever a tarefa");
-        } else {
-            document.getElementById("listaItens").appendChild(li);
-        }
-        document.getElementById("tarefa").value = "";
+function verificarBanana() {
+  const resultado = frutas.includes('banana')
+    ? "🍌 Banana está no array!"
+    : "🚫 Banana NÃO está no array.";
+  document.getElementById('saida').textContent = resultado;
+}
 
-        let span = document.createElement("SPAN");
-        let texto = document.createTextNode("\u00D7");
-        span.className = "botao-fechar";
-        span.appendChild(texto);
-        li.appendChild(span);
+function mostrarIndex(fruta) {
+  const index = frutas.indexOf(fruta);
+  const resultado = index !== -1
+    ? `A fruta '${fruta}' está na posição ${index}.`
+    : `'${fruta}' não foi encontrada.`;
+  document.getElementById('saida').textContent = resultado;
+}
 
-        span.onclick = function() {
-            let div = this.parentElement;
-            div.style.display = "none";
-        };
-    };
-});
+function mostrarJoin() {
+  const resultado = "join(', '): " + frutas.join(', ');
+  document.getElementById('saida').textContent = resultado;
+}
+
+function mostrarSlice() {
+  const fatiado = frutas.slice(1, 3);
+  document.getElementById('saida').textContent = "slice(1, 3): " + JSON.stringify(fatiado);
+}
+
+function fazerSplice() {
+  frutas.splice(1, 1);
+  atualizarLista();
+  document.getElementById('saida').textContent = "splice(1, 1) aplicado.";
+}
+
+function mapMaiusculas() {
+  const maiusculas = frutas.map(f => f.toUpperCase());
+  document.getElementById('saida').textContent = "map (toUpperCase): " + JSON.stringify(maiusculas);
+}
+
+function filtrarGrandes() {
+  const grandes = frutas.filter(f => f.length > 4);
+  document.getElementById('saida').textContent = "filter (length > 4): " + JSON.stringify(grandes);
+}

@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de Lista de Tarefas</title>
-    <link rel="stylesheet" href="style-aplicacao.css">
-</head>
+  <meta charset="UTF-8">
+  <title>Métodos de Arrays com Frutas</title>
+  <link rel="stylesheet" href="style-aplicacao.css"> </head>
 <body>
-    <nav>
-        <a href="index.html">Voltar ao menu</a>
-    </nav>
-    <div class="container">
-        <h1>Minha Lista de Tarefas</h1>
-        <div class="header">
-            <input type="text" id="tarefa" placeholder="Adicione uma nova tarefa...">
-            <button onclick="adicionarElemento()">Incluir</button>
-        </div>
-        <ul id="listaItens">
-            <li class="marcado">Estudar DOM HTML</li>
-            <li>Revisar eventos JavaScript</li>
-            <li>Criar exemplos com JSON</li>
-        </ul>
+  <nav>
+    <a href="index.html">Voltar ao menu</a>
+  </nav>
+
+  <div class="container"> <h1>Manipulando Frutas</h1>
+
+    <input type="text" id="frutaInput" placeholder="Digite uma fruta" />
+    <button onclick="adicionarFruta()">Adicionar</button>
+
+    <h2>Frutas:</h2>
+    <p id="listaFrutas">[ ]</p>
+
+    <div class="botoes">
+      <button onclick="metodo('push')">Push (Adicionar ao final)</button>
+      <button onclick="metodo('pop')">Pop (Remover do final)</button>
+      <button onclick="metodo('shift')">Shift (Remover do início)</button>
+      <button onclick="metodo('unshift')">Unshift (Adicionar ao início)</button>
+      <button onclick="verificarBanana()">Includes('banana')</button>
+      <button onclick="mostrarIndex('uva')">IndexOf('uva')</button>
+      <button onclick="mostrarJoin()">Join(', ')</button>
+      <button onclick="mostrarSlice()">Slice(1, 3)</button>
+      <button onclick="fazerSplice()">Splice(1, 1)</button>
+      <button onclick="mapMaiusculas()">Map (MAIÚSCULAS)</button>
+      <button onclick="filtrarGrandes()">Filter (nome > 4 letras)</button>
     </div>
-    <script src="script-tarefas.js"></script>
+
+    <pre id="saida"></pre>
+  </div> <script src="script-tarefas.js"></script>
 </body>
 </html>

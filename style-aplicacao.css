@@ -1,7 +1,7 @@
 body {
-    background-color: #ffffff;
+    background-color: #fdfdfd; 
     font-family: Arial, sans-serif;
-    color: white;
+    color: #333; 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -16,14 +16,14 @@ nav {
     position: fixed;
     top: 20px;
     left: 20px;
-    background-color: #b174bd;
+    background-color: #b174bd; 
     padding: 10px 15px;
     border-radius: 8px;
     z-index: 1000;
 }
 
-nav a { 
-    color: white;
+nav a {
+    color: white; 
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
@@ -31,7 +31,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #3b4148;
+    color: #3b4148; 
 }
 
 .container {
@@ -42,10 +42,11 @@ nav a:hover {
     width: 90%;
     max-width: 800px;
     margin-top: 50px;
+    color: white; 
 }
 
-h1 {
-    color: #b174bd;
+h1, h2 {
+    color: #b174bd; 
     text-align: center;
     margin-bottom: 25px;
 }
@@ -68,7 +69,7 @@ input[type="text"] {
 }
 
 button {
-    background-color: #b174bd;
+    background-color: #b174bd; 
     color: white;
     border: none;
     padding: 12px 20px;
@@ -83,76 +84,55 @@ button:hover {
     background-color: #9b5aab;
 }
 
-
-.header {
-    background-color: #3b4148;
-    padding: 15px 20px;
-    border-radius: 5px 5px 0 0;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 20px;
+body h1, body h2 { 
+    color: #ffffff; 
+    text-align: left; 
 }
 
-.header input {
-    flex-grow: 1;
-    margin-bottom: 0;
-}
 
-.header button {
-    margin-top: 0;
-    padding: 10px 15px;
-}
-
-#listaItens {
-    list-style: none;
-    padding: 0;
-    margin-top: 0;
-}
-
-#listaItens li {
-    background: #eee;
-    color: #333;
-    padding: 12px 8px 12px 40px;
-    position: relative;
-    cursor: pointer;
+body input[type="text"]#frutaInput { 
+    padding: 8px; 
     font-size: 16px;
-    border-bottom: 1px solid #ddd;
-    display: flex; 
-    align-items: center;
-    justify-content: space-between;
+    width: auto; 
+    display: inline-block; 
+    margin-right: 10px; 
+    color: #333; 
+    background-color: #fff; 
+    border: 1px solid #ccc;
 }
 
-#listaItens li:last-child {
-    border-bottom: none;
-}
 
-#listaItens li:nth-child(odd) {
-    background: #f9f9f9;
-}
-
-#listaItens li:hover {
-    background: #ddd;
-}
-
-#listaItens li.marcado {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-}
-
-.botao-fechar {
-    position: static; 
-    padding: 8px 12px;
-    margin-left: 10px;
-    background-color: #e74c3c;
+.botoes button { 
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #9b5aab; 
+    color: white;
+    border: none;
     border-radius: 5px;
-    color: white;
-    font-size: 1em;
-    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0; 
 }
 
-.botao-fechar:hover {
-    background-color: #c0392b;
-    color: white;
+.botoes button:hover {
+    background-color: #2980b9; 
+}
+
+.botoes {
+    margin-top: 20px;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px;
+    justify-content: flex-start; 
+}
+
+#saida, #listaFrutas {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    white-space: pre-wrap; 
+    color: #333; 
+    border: 1px solid #ddd; 
 }
