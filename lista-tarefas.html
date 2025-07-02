@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Lista de Tarefas</title>
+    <link rel="stylesheet" href="style-aplicacao.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Voltar ao menu</a>
+    </nav>
+    <div class="container">
+        <h1>Minha Lista de Tarefas</h1>
+        <div class="header">
+            <input type="text" id="tarefa" placeholder="Adicione uma nova tarefa...">
+            <button onclick="adicionarElemento()">Incluir</button>
+        </div>
+        <ul id="listaItens">
+            <li class="marcado">Estudar DOM HTML</li>
+            <li>Revisar eventos JavaScript</li>
+            <li>Criar exemplos com JSON</li>
+        </ul>
+    </div>
+    <script src="script-tarefas.js"></script>
+</body>
+</html>
